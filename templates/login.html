@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DANG NHAP</title>
+</head>
+<body>
+    {% if username and password %}
+    <h1>{{ username }} -- {{ password }}</h1>
+    {% else %}
+    <h1>DANG NHAP</h1>
+    {% endif %}
+    <form method="post" action="/login">
+        <input type="text" name="un" placeholder="USERNAME..."/>
+        <input type="password" name="pass" placeholder="PASSWORD..."/>
+        <input type="submit" value="DANG NHAP"/>
+    </form>
+</body>
+</html>
