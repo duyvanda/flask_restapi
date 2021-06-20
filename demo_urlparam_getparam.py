@@ -5,7 +5,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    arr = [-1, 2, 3, 4, 5]
+    return render_template("index.html", arr=arr)
 
 
 @app.route("/hello/<name>/<int:year>")
@@ -27,6 +28,11 @@ def login():
         else:
             return "Fail"
     return render_template("login.html")
+
+
+@app.template_filter("even")
+def select_even(arr):
+    return [a for a in arr if a > 0 and a % 2 == 0]
 
 
 if __name__ == "__main__":
